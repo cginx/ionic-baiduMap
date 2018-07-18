@@ -19,8 +19,9 @@
       <h2>Slide 1</h2>
     </ion-slide>
     <ion-slide>
-      <ion-content padding>
+      <ion-content class="map-content" padding>
         <show-map></show-map>
+        <button ion-button block (click)="doRefresh()">手动刷新</button>
       </ion-content>
     </ion-slide>
     <ion-slide>

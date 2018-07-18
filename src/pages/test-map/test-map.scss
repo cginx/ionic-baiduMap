@@ -1,8 +1,11 @@
 page-test-map {
     .map-slides {
-        ion-slide {
-            .slide-zoom {
-                height: 100%;
+        .slide-zoom {
+            height: 100%;
+            .map-content {
+                show-map {
+                    height: 80%;
+                }
             }
         }
     }

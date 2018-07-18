@@ -1,6 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
+import { ShowMapComponent } from '../../components/show-map/show-map';
 /**
  * Generated class for the TestMapPage page.
  *
@@ -15,11 +15,18 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class TestMapPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  @ViewChild(ShowMapComponent)private showMap: ShowMapComponent;
+  constructor(public navCtrl: NavController, public navParams: NavParams,
+  ) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad TestMapPage');
   }
+
+  doRefresh(){
+    this.showMap.init();
+  }
+
 
 }
