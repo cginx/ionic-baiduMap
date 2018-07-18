@@ -3,10 +3,10 @@ import { NavController, IonicPage, NavParams } from 'ionic-angular';
 
 @IonicPage()
 @Component({
-  selector: 'page-about',
-  templateUrl: 'about.html'
+  selector: 'page-map',
+  templateUrl: 'map.html'
 })
-export class AboutPage {
+export class MapPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
 

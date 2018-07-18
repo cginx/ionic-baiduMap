@@ -13,7 +13,7 @@ export class HomePage {
   }
 
   goAbout() {
-    this.navCtrl.push('AboutPage');
+    this.navCtrl.push('MapPage');
   }
 
   testMap() {
