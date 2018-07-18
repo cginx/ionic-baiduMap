@@ -9,8 +9,8 @@ $ npm install
 $ ionic serve
 ```
 
-# 普通页面中，地图能正常显示
+### 普通页面中，地图能正常显示
 ![image](https://raw.githubusercontent.com/cginx/ionic-baiduMap/master/issues/img/normal.png)
-# 在ion-slides中，地图无法显示
+### 在ion-slides中，地图无法显示
 ![image](https://raw.githubusercontent.com/cginx/ionic-baiduMap/master/issues/img/wrong.png)
 
