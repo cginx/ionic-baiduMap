@@ -1,10 +1,10 @@
 # ionic-baiduMap
 
-·安装
+*安装
 ```
 $ npm install 
 ```
-·运行
+*运行
 ```
 $ ionic serve
 ```
