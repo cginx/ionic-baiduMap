@@ -1,6 +1,6 @@
 import { Component, ViewChild } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { ShowMapComponent } from '../../components/show-map/show-map';
+import { BaiduMapComponent } from '../../components/baidu-map/baidu-map';
 /**
  * Generated class for the TestMapPage page.
  *
@@ -15,7 +15,7 @@ import { ShowMapComponent } from '../../components/show-map/show-map';
 })
 export class TestMapPage {
 
-  @ViewChild(ShowMapComponent)private showMap: ShowMapComponent;
+  @ViewChild(BaiduMapComponent)private baidMap: BaiduMapComponent;
   constructor(public navCtrl: NavController, public navParams: NavParams,
   ) {
   }
@@ -25,7 +25,7 @@ export class TestMapPage {
   }
 
   doRefresh(){
-    this.showMap.init();
+    this.baidMap.init();
   }
 
 

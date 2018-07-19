@@ -12,8 +12,12 @@ export class HomePage {
 
   }
 
-  goAbout() {
-    this.navCtrl.push('MapPage');
+  goBaiduMap() {
+    this.navCtrl.push('BaiduMapPage');
+  }
+ 
+  goGaodeMap() {
+    this.navCtrl.push('GapdeMapPage');
   }
 
   testMap() {
