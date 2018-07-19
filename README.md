@@ -1,4 +1,4 @@
-# ionic-baiduMap
+# ionic-map
 
 * 安装
 ```
