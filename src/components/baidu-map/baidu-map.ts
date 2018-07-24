@@ -29,6 +29,7 @@ export class BaiduMapComponent {
     let geolocation = new BMap.Geolocation();
     geolocation.getCurrentPosition(function (r) {
       if (this.getStatus() == BMAP_STATUS_SUCCESS) {
+        console.log(`百度地图定位成功    lng：${r.point.lng},lat：${r.point.lat}`)
         map.centerAndZoom(r.point, 12);
         let mk = new BMap.Marker(r.point);
         map.addOverlay(mk);

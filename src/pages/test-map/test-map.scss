@@ -2,6 +2,12 @@ page-test-map {
     .map-slides {
         .slide-zoom {
             height: 100%;
+            baidu-map {
+                height: 300px;
+            }
+            gaode-map {
+                height: 300px;
+            }
         }
     }
 }
