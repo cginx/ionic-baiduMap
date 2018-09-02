@@ -14,3 +14,6 @@ $ ionic serve
 ### 在ion-slides中，地图无法显示
 ![image](https://raw.githubusercontent.com/cginx/ionic-baiduMap/master/issues/img/wrong.png)
 
+###
+已经解决，在ion-slides中有css影响到了
+
