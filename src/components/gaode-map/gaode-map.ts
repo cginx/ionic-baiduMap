@@ -26,7 +26,7 @@ export class GaodeMapComponent {
   }
 
   init() {
-    let map = new AMap.Map(this.map.nativeElement, {
+    new AMap.Map(this.map.nativeElement, {
       resizeEnable: true,
       zoom: 11,
     });
