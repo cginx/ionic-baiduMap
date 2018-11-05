@@ -1,5 +1,7 @@
 {
   "name": "ionic-baiduMap",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "ionic-angular"
 }

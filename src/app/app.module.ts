@@ -1,6 +1,6 @@
 import { NgModule, ErrorHandler } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
+import { IonicApp, IonicModule, IonicErrorHandler, DeepLinkConfig } from 'ionic-angular';
 import { MyApp } from './app.component';
 
 
@@ -10,6 +10,13 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { HomePage } from '../pages/home/home';
 import { HomePageModule } from '../pages/home/home.module';
 
+const deepLinkConfig: DeepLinkConfig = {
+  links: [
+    { component: 'bdapp://map/newsassistant?src=andr.baidu.openAPIdemo', name: "contact", segment: "contact" },
+    { component: 'bdapp://map/newsassistant?src=andr.baidu.openAPIdemo', name: "hello", segment: "hello" }
+  ]
+};
+
 @NgModule({
   declarations: [
     MyApp,
@@ -17,7 +24,7 @@ import { HomePageModule } from '../pages/home/home.module';
   imports: [
     BrowserModule,
     HomePageModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp, undefined, deepLinkConfig)
   ],
   bootstrap: [IonicApp],
   entryComponents: [
