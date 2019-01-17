@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
-import { NavController, IonicPage, AlertController, DeepLinkConfig } from 'ionic-angular';
+import { NavController, IonicPage, AlertController } from 'ionic-angular';
 import { Deeplinks } from '@ionic-native/deeplinks';
-// import { QrCode } from 'qrcode-reader';
 import * as QrCode from 'qrcode-reader/dist/index.js';
+import { Calendar } from '@ionic-native/calendar';
 
 
 @IonicPage()
@@ -14,6 +14,7 @@ export class HomePage {
   Deeplinks
   constructor(public navCtrl: NavController, private deeplinks: Deeplinks,
     private alertCtrl: AlertController,
+     private calendar: Calendar
   ) {
     console.log('   ')
   }
@@ -25,6 +26,7 @@ export class HomePage {
   goGaodeMap() {
     this.navCtrl.push('GapdeMapPage');
   }
+
 
   testMap() {
     this.navCtrl.push('TestMapPage');
@@ -46,6 +48,13 @@ export class HomePage {
   getImg() {
 
   };
+
+  createCalendar() {
+    this.calendar.createCalendar('MyCalendar').then(
+      (msg) => { console.log(msg); },
+      (err) => { console.log(err); }
+    );
+  }
 
 
   go() {

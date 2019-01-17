@@ -8,7 +8,9 @@ call ionic cordova build android --release
 
 xcopy  /a /Y .\platforms\android\app\build\outputs\apk\release\"*.apk" .\"app.apk"
 
-::½öÒ»´ÎÐèÒªÉú³ÉÇ©Ãû
+::ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½Òªï¿½ï¿½ï¿½ï¿½Ç©ï¿½ï¿½
 ::keytool -genkey -v -keystore cginx.keystore -alias cginx.keystore -keyalg RSA -validity 20000
 
-jarsigner -verbose -keystore cginx.keystore -signedjar complete.apk app.apk cginx.keystore
+jarsigner -verbose -tsa http://sha256timestamp.ws.symantec.com/sha256/timestamp -keystore cginx.keystore -storepass cginx1102 -digestalg SHA1 -sigalg MD5withRSA -signedjar complete.apk app.apk cginx.keystore
+
+pause

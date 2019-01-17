@@ -9,6 +9,9 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { HomePage } from '../pages/home/home';
 import { HomePageModule } from '../pages/home/home.module';
+import { Calendar } from '@ionic-native/calendar';
+import { Deeplinks } from '@ionic-native/deeplinks';
+
 
 const deepLinkConfig: DeepLinkConfig = {
   links: [
@@ -16,7 +19,6 @@ const deepLinkConfig: DeepLinkConfig = {
     { component: 'bdapp://map/newsassistant?src=andr.baidu.openAPIdemo', name: "hello", segment: "hello" }
   ]
 };
-
 @NgModule({
   declarations: [
     MyApp,
@@ -32,7 +34,9 @@ const deepLinkConfig: DeepLinkConfig = {
     HomePage,
   ],
   providers: [
+    Calendar,
     StatusBar,
+    Deeplinks,
     SplashScreen,
     { provide: ErrorHandler, useClass: IonicErrorHandler }
   ]
