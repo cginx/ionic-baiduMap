@@ -1,8 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, IonicPage, AlertController } from 'ionic-angular';
-import { Deeplinks } from '@ionic-native/deeplinks';
 import * as QrCode from 'qrcode-reader/dist/index.js';
-import { Calendar } from '@ionic-native/calendar';
 
 
 @IonicPage()
@@ -12,9 +10,7 @@ import { Calendar } from '@ionic-native/calendar';
 })
 export class HomePage {
   Deeplinks
-  constructor(public navCtrl: NavController, private deeplinks: Deeplinks,
-    private alertCtrl: AlertController,
-     private calendar: Calendar
+  constructor(public navCtrl: NavController, private alertCtrl: AlertController,
   ) {
     console.log('   ')
   }
@@ -49,54 +45,4 @@ export class HomePage {
 
   };
 
-  createCalendar() {
-    this.calendar.createCalendar('MyCalendar').then(
-      (msg) => { console.log(msg); },
-      (err) => { console.log(err); }
-    );
-  }
-
-
-  go() {
-
-    let alert = this.alertCtrl.create({
-      title: '测试',
-      message: '测试',
-      buttons: ['Dismiss']
-    });
-    alert.present();
-    try {
-
-      this.deeplinks.route({
-        'path': 'HTTPS://QR.ALIPAY.COM/FKX09715A5X4ZOPKMNFXFF?t=1539313975690'
-      }).subscribe(match => {
-        // match.$route - the route we matched, which is the matched entry from the arguments to route()
-        // match.$args - the args passed in the link
-        // match.$link - the full link data
-        console.log('Successfully matched route', match);
-        let alert = this.alertCtrl.create({
-          title: '成功',
-          message: JSON.stringify(match),
-          buttons: ['Dismiss']
-        });
-        alert.present();
-      }, nomatch => {
-        // nomatch.$link - the full link data
-        console.log('Got a deeplink that didn\'t match', nomatch);
-        let alert = this.alertCtrl.create({
-          title: '失败',
-          message: JSON.stringify(nomatch),
-          buttons: ['Dismiss']
-        });
-        alert.present();
-      });
-    } catch (error) {
-      let alert = this.alertCtrl.create({
-        title: '失败',
-        message: JSON.stringify(error),
-        buttons: ['Dismiss']
-      });
-      alert.present();
-    }
-  }
 }
